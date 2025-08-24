@@ -11,7 +11,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 
 # Create the database and table if not exists
 def setup_database():
-    conn = sqlite3.connect('user_profiles.db')
+    conn = sqlite3.connect('./user_profiles.db')
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS users (chat_id INTEGER PRIMARY KEY, name TEXT, phone TEXT, age INTEGER)''')
     conn.commit()
